@@ -1,13 +1,13 @@
-GCODE c;
+//MODIFY ONLY THE CODE IN THIS TAB
 
-void setup() {
-  c = new GCODE();
-  c.G("0", 0, 0, 0);
-  c.G("1", 0, 0, -.1);
-  c.G("1", 0, 1, -.1);
-  c.G("1", 1, 1, -.1);
-  c.G("1", 1, 0, -.1);
-  c.G("1", 0, 0, -.1);
-  c.push();
+//The G-Code. Write your G-code within the GCODE() function
+
+void GCODE() {
+  g.G("00", 0, 0, 0);
+  g.G("01", 0, 0, -.1);
+  g.G("01", 0, 1, -.1);
+  g.G("01", 1, 1, -.1);
+  g.G("01", 1, 0, -.1);
+  g.G("01", 0, 0, -.1);
 }
 
