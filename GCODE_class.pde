@@ -1,8 +1,10 @@
 class GCODE {
   StringList code;
+  Library l;
 
   GCODE() {
     code = new StringList();
+    l = new Library(this);
   }
 
   void G(String n, float x, float y, float z) {
