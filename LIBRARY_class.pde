@@ -9,5 +9,13 @@ class Library {
     g.G("01", x2, y1, z);
     g.G("01", x1, y1, z);
   }
+
+  void delayS(float sec) {
+    g.G("04", sec);
+  }
+
+  void delayMS(float ms) {
+    g.G("04", ms / 1000);
+  }
 }
 

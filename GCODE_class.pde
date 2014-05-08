@@ -9,15 +9,28 @@ class GCODE {
     filename = filename_;
   }
 
-  void G(String n, float x, float y, float z) {
+  void G(String n, float p) {
+    String line;
     n = (n.length() < 2) ? "0" + n : n;
-    String line = "G"+n+" X"+x+" Y"+y+" Z"+z;
+    switch (n) {
+    case "03":
+      line = "G03 P"+p;
+      break;
+    }
+    code.append(line);
+  }
+
+  void G(String n, float x, float y, float z) {
+    String line;
+    n = (n.length() < 2) ? "0" + n : n;
+    line = "G"+n+" X"+x+" Y"+y+" Z"+z;
     code.append(line);
   }
 
   void push() {
     String[] codeArray = new String[code.size()];
     codeArray = arrayConv(code);
-    saveStrings("GCODE.nc", codeArray);
+    saveStrings(filename, codeArray);
   }
 }
+
