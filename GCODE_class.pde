@@ -1,10 +1,12 @@
 class GCODE {
   StringList code;
+  String filename;
   Library l;
 
-  GCODE() {
+  GCODE(String filename_) {
     code = new StringList();
     l = new Library(this);
+    filename = filename_;
   }
 
   void G(String n, float x, float y, float z) {
