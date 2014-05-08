@@ -19,11 +19,3 @@ class GCODE {
     saveStrings("GCODE.nc", codeArray);
   }
 }
-
-GCODE g;
-
-void setup() {
-  g = new GCODE();
-  GCODE();
-  g.push();
-}

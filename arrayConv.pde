@@ -6,3 +6,11 @@ String[] arrayConv(StringList list) {
   return array;
 }
 
+StringList listConv(String[] array) {
+  StringList list = new StringList();
+  for (int i = 0; i < array.length; i++) {
+    list.append(array[i]);
+  }
+  return list;
+}
+
