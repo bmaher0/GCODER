@@ -29,7 +29,7 @@ class GCODE {
     code.append(line);
   }
 
-  void pushFile() {
+  void push() {
     String[] codeArray = new String[code.size()];
     codeArray = arrayConv(code);
     saveStrings(filename, codeArray);
