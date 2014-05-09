@@ -1,21 +1,34 @@
 class Library {
+  GCODE p;
   Library(GCODE parent) {
+    p = parent;
+  }
+  void lin(float x1, float y1, float x2, float y2, float z) {
+    p.G("01", x1, y1, z);
+    p.G("01", x2, y2, z);
   }
 
-  void rect(float x1, float y1, float x2, float y2, float z) {
-    g.G("01", x1, y1, z);
-    g.G("01", x1, y2, z);
-    g.G("01", x2, y2, z);
-    g.G("01", x2, y1, z);
-    g.G("01", x1, y1, z);
+  void rec(float x1, float y1, float x2, float y2, float z) {
+    p.G("01", x1, y1, z);
+    p.G("01", x1, y2, z);
+    p.G("01", x2, y2, z);
+    p.G("01", x2, y1, z);
+    p.G("01", x1, y1, z);
+  }
+
+  void tri(float x1, float y1, float x2, float y2, float x3, float y3, float z) {
+    p.G("01", x1, y1, z);
+    p.G("01", x2, y2, z);
+    p.G("01", x3, y3, z);
+    p.G("01", x1, y1, z);
   }
 
   void delayS(float sec) {
-    g.G("04", sec);
+    p.G("04", sec);
   }
 
   void delayMS(float ms) {
-    g.G("04", ms / 1000);
+    p.G("04", ms / 1000);
   }
 }
 

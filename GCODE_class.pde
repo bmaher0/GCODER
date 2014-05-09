@@ -9,13 +9,15 @@ class GCODE {
     filename = filename_;
   }
 
+  void set(String filename_) {
+    filename = filename_;
+  }
+
   void G(String n, float p) {
-    String line;
+    String line = "";
     n = (n.length() < 2) ? "0" + n : n;
-    switch (n) {
-    case "03":
+    if (n == "03") {
       line = "G03 P"+p;
-      break;
     }
     code.append(line);
   }
