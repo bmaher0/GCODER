@@ -3,6 +3,15 @@ class Library {
   Library(GCODE parent) {
     p = parent;
   }
+
+  void rushTo(float x, float y, float z) {
+    p.G("00", x, y, z);
+  }
+
+  void goTo(float x, float y, float z) {
+    p.G("01", x, y, z);
+  }
+
   void lin(float x1, float y1, float x2, float y2, float z) {
     p.G("01", x1, y1, z);
     p.G("01", x2, y2, z);
