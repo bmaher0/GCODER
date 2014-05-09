@@ -9,7 +9,7 @@ class GCODE {
     filename = filename_;
   }
 
-  void set(String filename_) {
+  void name(String filename_) {
     filename = filename_;
   }
 
@@ -29,10 +29,16 @@ class GCODE {
     code.append(line);
   }
 
-  void push() {
+  void pushFile() {
     String[] codeArray = new String[code.size()];
     codeArray = arrayConv(code);
     saveStrings(filename, codeArray);
+  }
+  
+  void push(String filename_) {
+    String[] codeArray = new String[code.size()];
+    codeArray = arrayConv(code);
+    saveStrings(filename_, codeArray);
   }
 }
 
