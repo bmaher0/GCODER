@@ -21,10 +21,19 @@ class GCODE {
   }
 
   void G(String n, float x, float y, float z) {
-    String line;
+    String line = "";
     n = (n.length() < 2) ? "0" + n : n;
     line = (n == "00" || n == "01") ? "G"+n+" X"+x+" Y"+y+" Z"+z : line;
     code.append(line);
+  }
+  void space() {
+    code.append(" ");
+  }
+
+  void space(int n) {
+    for (int i = 0; i < n; i++) {
+      code.append(" ");
+    }
   }
 
   void push() {

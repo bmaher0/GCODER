@@ -10,7 +10,9 @@ void GCODE() {
   g.l.rec(0, 0, 1, 1, 0);
   g.l.delayMS(2000);
   g.l.tri(0, 0, 0, 1, 1, 1, 0);
-  
+  g.space();
+  g.G("1", 1, 1, 1);
+
   //End G-code here
 }
 
