@@ -3,7 +3,7 @@ class GCODE {
   String filename;
   Library l;
 
-  GCODE(String filename_) {
+  GCODE() {
     code = new StringList();
     l = new Library(this);
     filename = "code1";
