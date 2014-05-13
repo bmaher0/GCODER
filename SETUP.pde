@@ -1,7 +1,7 @@
 GCODE g;
 
 void setup() {
-  g = new GCODE("GCODE.nc");
+  g = new GCODE();
   GCODE();
   g.push();
 }

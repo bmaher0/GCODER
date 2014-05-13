@@ -6,17 +6,26 @@ class GCODE {
   GCODE(String filename_) {
     code = new StringList();
     l = new Library(this);
-    filename = filename_;
+    filename = "code1";
   }
 
   void name(String filename_) {
     filename = filename_;
   }
 
+  void write(String line) {
+    code.append(line);
+  }
+
+  void comment(String line) {
+    line = "(" + line + ")";
+    code.append(line);
+  } 
+
   void G(String n, float p) {
     String line = "";
     n = (n.length() < 2) ? "0" + n : n;
-    line = (n == "03") ? "G03 P"+p : line;
+    line = (n == "04") ? "G04 P"+p : line;
     code.append(line);
   }
 
