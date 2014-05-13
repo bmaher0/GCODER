@@ -3,24 +3,15 @@ class GCODE {
   String filename;
   Library l;
 
-  GCODE() {
+  GCODE(String filename_) {
     code = new StringList();
     l = new Library(this);
-    filename = "code1";
+    filename = filename_;
   }
 
   void name(String filename_) {
     filename = filename_;
   }
-
-  void write(String line) {
-    code.append(line);
-  }
-
-  void comment(String line) {
-    line = "(" + line + ")";
-    code.append(line);
-  } 
 
   void G(String n, float p) {
     String line = "";
