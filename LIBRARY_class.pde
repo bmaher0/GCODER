@@ -1,12 +1,12 @@
 class Library {
   GCODE p;
-  
+
   Library(GCODE parent) {
     p = parent;
   }
 
   void rushTo(float x, float y, float z) {
-    p.G("00", x, y, z);
+    p.G(0, x, y, z);
   }
 
   void goTo(float x, float y, float z) {

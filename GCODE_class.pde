@@ -26,6 +26,17 @@ class GCODE {
     line = (n == "00" || n == "01") ? "G"+n+" X"+x+" Y"+y+" Z"+z : line;
     code.append(line);
   }
+
+  void G(int m, float[] args) {
+    String line = "";
+    String n = str(m);
+    n = (n.length() < 2) ? "0" + n : n;
+    line = (n == "00" || n == "01") ? "G"+n+" X"+args[0]+" Y"+args[1]+" Z"+args[2] : line;
+    line = (n == "04") ? "G04 P"+args[0] : line;
+    code.append(line);
+  }
+
+
   void space() {
     code.append(" ");
   }
